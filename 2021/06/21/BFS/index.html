@@ -1,252 +1,37 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>BFS | Conquest_Legends&#39;s blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="搜索简介搜索，就是把所有的决策树全都看一遍，穷尽所有的情况来找到最优解或是所有合法的解数。 搜索可以让你的骗分骗得十分爽，并且搜索也是很多高级算法的基础。 我们先讲讲BFS。 BFSBFS就是广度优先搜索的简称，它的搜索方式是这样的： BFS会将同一层的决策树上的决策全部都看一遍，然后再去看下一层的东西。 不同于DFS，DFS是不撞南墙不回头。 举个例子，你在一个陌生的地方，你想快速找到WC，在没">
-<meta property="og:type" content="article">
-<meta property="og:title" content="BFS">
-<meta property="og:url" content="http://conquest-legends.github.io/2021/06/21/BFS/index.html">
-<meta property="og:site_name" content="Conquest_Legends&#39;s blog">
-<meta property="og:description" content="搜索简介搜索，就是把所有的决策树全都看一遍，穷尽所有的情况来找到最优解或是所有合法的解数。 搜索可以让你的骗分骗得十分爽，并且搜索也是很多高级算法的基础。 我们先讲讲BFS。 BFSBFS就是广度优先搜索的简称，它的搜索方式是这样的： BFS会将同一层的决策树上的决策全部都看一遍，然后再去看下一层的东西。 不同于DFS，DFS是不撞南墙不回头。 举个例子，你在一个陌生的地方，你想快速找到WC，在没">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-06-21T05:52:54.000Z">
-<meta property="article:modified_time" content="2021-06-21T05:53:42.826Z">
-<meta property="article:author" content="Conquest-Legends">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Conquest_Legends's blog" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-<meta name="generator" content="Hexo 5.4.0"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Conquest_Legends&#39;s blog</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">DxrNb</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://Conquest-Legends.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main"><article id="post-BFS" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/06/21/BFS/" class="article-date">
-  <time class="dt-published" datetime="2021-06-21T05:52:54.000Z" itemprop="datePublished">2021-06-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      BFS
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="搜索简介"><a href="#搜索简介" class="headerlink" title="搜索简介"></a>搜索简介</h2><p>搜索，就是把所有的决策树全都看一遍，穷尽所有的情况来找到最优解或是所有合法的解数。</p>
-<p>搜索可以让你的骗分骗得十分爽，并且搜索也是很多高级算法的基础。</p>
-<p>我们先讲讲BFS。</p>
-<h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><p>BFS就是广度优先搜索的简称，它的搜索方式是这样的：</p>
-<p>BFS会将同一层的决策树上的决策全部都看一遍，然后再去看下一层的东西。</p>
-<p>不同于DFS，DFS是不撞南墙不回头。</p>
-<p>举个例子，你在一个陌生的地方，你想快速找到WC，在没有任何外在帮助的条件下你肯定会一层楼一层楼地去看，而不是先从一楼爬到最顶层看第一个房间，然后再爬回去顺便看第二个房间……</p>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>BFS的实现并不是很难，需要用到队列，队列是一种数据结构，对于BFS来讲只需要知道队列怎么写就可以了：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/Conqueror886/bfs-qian-zhi-ji-neng-dui-lie-stl-ban-post">https://www.luogu.com.cn/blog/Conqueror886/bfs-qian-zhi-ji-neng-dui-lie-stl-ban-post</a>。</p>
-<p>然后，BFS的实现其实也很简单。</p>
-<p>首先我们开个队列，将初始的元素推入队列，然后标记成已经搜过，然后进行一波搜索，搜完之后将它扔出队列，在这一过程中同时推入下一个元素进队列，直到队列被弹空。</p>
-<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><p>如果你看不懂的话，请按照代码自个打一遍，在纸上写写画画，然后就会豁然开朗。</p>
-<h3 id="血色先锋队"><a href="#血色先锋队" class="headerlink" title="血色先锋队"></a>血色先锋队</h3><p>（这道题有一丝丝的变态，看不懂可以先往后面看，但是这道题是写得注释最多的，可以先瞅一眼了解下BFS怎么写）。</p>
-<ul>
-<li><p>题目：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1332">https://www.luogu.com.cn/problem/P1332</a>。</p>
-</li>
-<li><p>题解： <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1332-xie-se-xian-feng-dui-post">https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1332-xie-se-xian-feng-dui-post</a>。</p>
-</li>
-</ul>
-<h3 id="好奇怪的电梯"><a href="#好奇怪的电梯" class="headerlink" title="好奇怪的电梯"></a>好奇怪的电梯</h3><ul>
-<li><p>题目：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1135">https://www.luogu.com.cn/problem/P1135</a>。</p>
-</li>
-<li><p>题解：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1135-ji-guai-di-dian-ti-post">https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1135-ji-guai-di-dian-ti-post</a>。</p>
-</li>
-</ul>
-<h3 id="离开中山路"><a href="#离开中山路" class="headerlink" title="离开中山路"></a>离开中山路</h3><ul>
-<li><p>题目：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1746">https://www.luogu.com.cn/problem/P1746</a></p>
-</li>
-<li><p>题解：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1746-li-kai-zhong-shan-lu-post">https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1746-li-kai-zhong-shan-lu-post</a>。</p>
-</li>
-</ul>
-<h3 id="马的遍历"><a href="#马的遍历" class="headerlink" title="马的遍历"></a>马的遍历</h3><ul>
-<li><p>题目：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1443">https://www.luogu.com.cn/problem/P1443</a>。</p>
-</li>
-<li><p>题解：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1443-ma-di-bian-li-post">https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1443-ma-di-bian-li-post</a>。</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://conquest-legends.github.io/2021/06/21/BFS/" data-id="ckq67e1r60000ewuc0i1zamwa" data-title="BFS" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-  
-    <a href="/2021/06/21/blog-%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">blog 测试文章</div>
-    </a>
-  
-</nav>
-
-  
-</article>
+{% extends '_layout.swig' %}
+{% import '_macro/post.swig' as post_template %}
+{% import '_macro/sidebar.swig' as sidebar_template %}
 
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-  
-    
+{% block page_class %}page-post-detail{% endblock %}
 
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a></li></ul>
+
+{% block content %}
+
+  <div id="posts" class="posts-expand">
+    {{ post_template.render(page) }}
+
+    <div class="post-spread">
+      {% if theme.jiathis %}
+        {% include '_partials/share/jiathis.swig' %}
+      {% elseif theme.baidushare %}
+        {% include '_partials/share/baidushare.swig' %}
+      {% elseif theme.add_this_id %}
+        {% include '_partials/share/add-this.swig' %}
+      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
+        {% include '_partials/share/duoshuo_share.swig' %}
+      {% endif %}
     </div>
   </div>
 
+{% endblock %}
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2021/06/21/BFS/">BFS</a>
-          </li>
-        
-          <li>
-            <a href="/2021/06/21/blog-%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/">blog 测试文章</a>
-          </li>
-        
-          <li>
-            <a href="/2021/06/21/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+{% block sidebar %}
+  {{ sidebar_template.render(true) }}
+{% endblock %}
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2021 Conquest-Legends<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
+{% block script_extra %}
+  {% include '_scripts/pages/post-details.swig' %}
+{% endblock %}
