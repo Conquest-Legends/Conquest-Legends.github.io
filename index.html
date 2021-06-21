@@ -1,23 +1,475 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block title %}{{ config.title }}{% if theme.index_with_subtitle and config.subtitle %} - {{config.subtitle }}{% endif %}{% endblock %}
+<!-- Head tag -->
+<head>
 
-{% block page_class %}
-  {% if is_home() %}page-home{% endif -%}
-{% endblock %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-{% block content %}
-  <section id="posts" class="posts-expand">
-    {% for post in page.posts %}
-      {{ post_template.render(post, true) }}
-    {% endfor %}
-  </section>
+    <!--Description-->
+    
+        <meta name="description" content="Dxr 的 blog，这里有自己的学习笔记，以及游记等等">
+    
 
-  {% include '_partials/pagination.swig' %}
-{% endblock %}
+    <!--Author-->
+    
+        <meta name="author" content="Conquest-Legends">
+    
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Conquest_Legends&#39;s blog"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Dxr 的 blog，这里有自己的学习笔记，以及游记等等" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Conquest_Legends&#39;s blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="website" />
+    
+
+    <!--Page Cover-->
+    
+
+    
+        <meta name="twitter:card" content="summary" />
+    
+    
+    
+
+    <!-- Title -->
+    
+    <title>Conquest_Legends&#39;s blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    About
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    Contact
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">Conquest_Legends's blog</h1>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2021/06/21/BFS/">
+                BFS
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2021-06-21</span>
+            
+            
+                <a href="http://conquest-legends.github.io/2021/06/21/BFS/#disqus_thread" class="comments article-comment-link">留言</a>
+            
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h2 id="搜索简介"><a href="#搜索简介" class="headerlink" title="搜索简介"></a>搜索简介</h2><p>搜索，就是把所有的决策树全都看一遍，穷尽所有的情况来找到最优解或是所有合法的解数。</p>
+<p>搜索可以让你的骗分骗得十分爽，并且搜索也是很多高级算法的基础。</p>
+<p>我们先讲讲BFS。</p>
+<h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><p>BFS就是广度优先搜索的简称，它的搜索方式是这样的：</p>
+<p>BFS会将同一层的决策树上的决策全部都看一遍，然后再去看下一层的东西。</p>
+<p>不同于DFS，DFS是不撞南墙不回头。</p>
+<p>举个例子，你在一个陌生的地方，你想快速找到WC，在没有任何外在帮助的条件下你肯定会一层楼一层楼地去看，而不是先从一楼爬到最顶层看第一个房间，然后再爬回去顺便看第二个房间……</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>BFS的实现并不是很难，需要用到队列，队列是一种数据结构，对于BFS来讲只需要知道队列怎么写就可以了：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/Conqueror886/bfs-qian-zhi-ji-neng-dui-lie-stl-ban-post">https://www.luogu.com.cn/blog/Conqueror886/bfs-qian-zhi-ji-neng-dui-lie-stl-ban-post</a>。</p>
+<p>然后，BFS的实现其实也很简单。</p>
+<p>首先我们开个队列，将初始的元素推入队列，然后标记成已经搜过，然后进行一波搜索，搜完之后将它扔出队列，在这一过程中同时推入下一个元素进队列，直到队列被弹空。</p>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><p>如果你看不懂的话，请按照代码自个打一遍，在纸上写写画画，然后就会豁然开朗。</p>
+<h3 id="血色先锋队"><a href="#血色先锋队" class="headerlink" title="血色先锋队"></a>血色先锋队</h3><p>（这道题有一丝丝的变态，看不懂可以先往后面看，但是这道题是写得注释最多的，可以先瞅一眼了解下BFS怎么写）。</p>
+<ul>
+<li><p>题目：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1332">https://www.luogu.com.cn/problem/P1332</a>。</p>
+</li>
+<li><p>题解： <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1332-xie-se-xian-feng-dui-post">https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1332-xie-se-xian-feng-dui-post</a>。</p>
+</li>
+</ul>
+<h3 id="好奇怪的电梯"><a href="#好奇怪的电梯" class="headerlink" title="好奇怪的电梯"></a>好奇怪的电梯</h3><ul>
+<li><p>题目：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1135">https://www.luogu.com.cn/problem/P1135</a>。</p>
+</li>
+<li><p>题解：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1135-ji-guai-di-dian-ti-post">https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1135-ji-guai-di-dian-ti-post</a>。</p>
+</li>
+</ul>
+<h3 id="离开中山路"><a href="#离开中山路" class="headerlink" title="离开中山路"></a>离开中山路</h3><ul>
+<li><p>题目：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1746">https://www.luogu.com.cn/problem/P1746</a></p>
+</li>
+<li><p>题解：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1746-li-kai-zhong-shan-lu-post">https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1746-li-kai-zhong-shan-lu-post</a>。</p>
+</li>
+</ul>
+<h3 id="马的遍历"><a href="#马的遍历" class="headerlink" title="马的遍历"></a>马的遍历</h3><ul>
+<li><p>题目：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1443">https://www.luogu.com.cn/problem/P1443</a>。</p>
+</li>
+<li><p>题解：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1443-ma-di-bian-li-post">https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1443-ma-di-bian-li-post</a>。</p>
+</li>
+</ul>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2021/06/21/blog-%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/">
+                blog 测试文章
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2021-06-21</span>
+            
+            
+                <a href="http://conquest-legends.github.io/2021/06/21/blog-%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/#disqus_thread" class="comments article-comment-link">留言</a>
+            
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>搭建 hexo 博客的测试</p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2021/06/21/hello-world/">
+                Hello World
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2021-06-21</span>
+            
+            
+                <a href="http://conquest-legends.github.io/2021/06/21/hello-world/#disqus_thread" class="comments article-comment-link">留言</a>
+            
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+        </div>
+    
+
+</div>
+            
+        </section>
+    </div>
+</div>
+
+
+
+
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    This theme was developed by <a target="_blank" rel="noopener" href="https://github.com/klugjo">Jonathan Klughertz</a>. The source code is available on Github. Create Websites. Make Magic.
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2021/06/21/BFS/">BFS</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2021/06/21/blog-%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/">blog 测试文章</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2021/06/21/hello-world/">Hello World</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://github.com/klugjo/hexo-theme-alpha-dust">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://twitter.com/?lang=en">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://www.facebook.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://www.instagram.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-instagram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://dribbble.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-dribbble"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://telegram.org/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-telegram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://www.behance.net/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-behance"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://500px.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-500px"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:test@example.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a target="_blank" rel="noopener" href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'klugjotest';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>
