@@ -37,45 +37,16 @@
   </entry>
   
   <entry>
-    <title>about</title>
-    <link href="http://conquest-legends.github.io/2021/06/21/about/"/>
-    <id>http://conquest-legends.github.io/2021/06/21/about/</id>
-    <published>2021-06-21T09:02:33.000Z</published>
-    <updated>2021-06-21T09:20:53.759Z</updated>
-    
-    <content type="html"><![CDATA[<p>我是一名 OI 选手，<del>特别 cool 的 OI 选手</del></p><p>搭建这个 blog 还是挺不容易的，希望自己可以在 OI 路上走得越来越远。</p><p>总而言之，先滚去把文化课的作业处理掉吧（）</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;我是一名 OI 选手，&lt;del&gt;特别 cool 的 OI 选手&lt;/del&gt;&lt;/p&gt;
-&lt;p&gt;搭建这个 blog 还是挺不容易的，希望自己可以在 OI 路上走得越来越远。&lt;/p&gt;
-&lt;p&gt;总而言之，先滚去把文化课的作业处理掉吧（）&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    
-    <category term="公告" scheme="http://conquest-legends.github.io/tags/%E5%85%AC%E5%91%8A/"/>
-    
-  </entry>
-  
-  <entry>
     <title>BFS</title>
     <link href="http://conquest-legends.github.io/2021/06/21/BFS/"/>
     <id>http://conquest-legends.github.io/2021/06/21/BFS/</id>
     <published>2021-06-21T05:52:54.000Z</published>
-    <updated>2021-06-21T09:21:57.123Z</updated>
+    <updated>2021-06-21T13:28:03.716Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="搜索简介"><a href="#搜索简介" class="headerlink" title="搜索简介"></a>搜索简介</h2><p>搜索，就是把所有的决策树全都看一遍，穷尽所有的情况来找到最优解或是所有合法的解数。</p><p>搜索可以让你的骗分骗得十分爽，并且搜索也是很多高级算法的基础。</p><p>我们先讲讲BFS。</p><h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><p>BFS就是广度优先搜索的简称，它的搜索方式是这样的：</p><p>BFS会将同一层的决策树上的决策全部都看一遍，然后再去看下一层的东西。</p><p>不同于DFS，DFS是不撞南墙不回头。</p><p>举个例子，你在一个陌生的地方，你想快速找到WC，在没有任何外在帮助的条件下你肯定会一层楼一层楼地去看，而不是先从一楼爬到最顶层看第一个房间，然后再爬回去顺便看第二个房间……</p><h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>BFS的实现并不是很难，需要用到队列，队列是一种数据结构，对于BFS来讲只需要知道队列怎么写就可以了：<a href="https://www.luogu.com.cn/blog/Conqueror886/bfs-qian-zhi-ji-neng-dui-lie-stl-ban-post">https://www.luogu.com.cn/blog/Conqueror886/bfs-qian-zhi-ji-neng-dui-lie-stl-ban-post</a>。</p><p>然后，BFS的实现其实也很简单。</p><p>首先我们开个队列，将初始的元素推入队列，然后标记成已经搜过，然后进行一波搜索，搜完之后将它扔出队列，在这一过程中同时推入下一个元素进队列，直到队列被弹空。</p><h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><p>如果你看不懂的话，请按照代码自个打一遍，在纸上写写画画，然后就会豁然开朗。</p><h3 id="血色先锋队"><a href="#血色先锋队" class="headerlink" title="血色先锋队"></a>血色先锋队</h3><p>（这道题有一丝丝的变态，看不懂可以先往后面看，但是这道题是写得注释最多的，可以先瞅一眼了解下BFS怎么写）。</p><ul><li><p>题目：<a href="https://www.luogu.com.cn/problem/P1332">https://www.luogu.com.cn/problem/P1332</a>。</p></li><li><p>题解： <a href="https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1332-xie-se-xian-feng-dui-post">https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1332-xie-se-xian-feng-dui-post</a>。</p></li></ul><h3 id="好奇怪的电梯"><a href="#好奇怪的电梯" class="headerlink" title="好奇怪的电梯"></a>好奇怪的电梯</h3><ul><li><p>题目：<a href="https://www.luogu.com.cn/problem/P1135">https://www.luogu.com.cn/problem/P1135</a>。</p></li><li><p>题解：<a href="https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1135-ji-guai-di-dian-ti-post">https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1135-ji-guai-di-dian-ti-post</a>。</p></li></ul><h3 id="离开中山路"><a href="#离开中山路" class="headerlink" title="离开中山路"></a>离开中山路</h3><ul><li><p>题目：<a href="https://www.luogu.com.cn/problem/P1746">https://www.luogu.com.cn/problem/P1746</a></p></li><li><p>题解：<a href="https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1746-li-kai-zhong-shan-lu-post">https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1746-li-kai-zhong-shan-lu-post</a>。</p></li></ul><h3 id="马的遍历"><a href="#马的遍历" class="headerlink" title="马的遍历"></a>马的遍历</h3><ul><li><p>题目：<a href="https://www.luogu.com.cn/problem/P1443">https://www.luogu.com.cn/problem/P1443</a>。</p></li><li><p>题解：<a href="https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1443-ma-di-bian-li-post">https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1443-ma-di-bian-li-post</a>。</p></li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="搜索简介"><a href="#搜索简介" class="headerlink" title="搜索简介"></a>搜索简介</h2><p>搜索，就是把所有的决策树全都看一遍，穷尽所有的情况来找到最优解或是所有合法的解数。</p><span id="more"></span><p>搜索可以让你的骗分骗得十分爽，并且搜索也是很多高级算法的基础。</p><p>我们先讲讲BFS。</p><h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><p>BFS就是广度优先搜索的简称，它的搜索方式是这样的：</p><p>BFS会将同一层的决策树上的决策全部都看一遍，然后再去看下一层的东西。</p><p>不同于DFS，DFS是不撞南墙不回头。</p><p>举个例子，你在一个陌生的地方，你想快速找到WC，在没有任何外在帮助的条件下你肯定会一层楼一层楼地去看，而不是先从一楼爬到最顶层看第一个房间，然后再爬回去顺便看第二个房间……</p><h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>BFS的实现并不是很难，需要用到队列，队列是一种数据结构，对于BFS来讲只需要知道队列怎么写就可以了：<a href="https://www.luogu.com.cn/blog/Conqueror886/bfs-qian-zhi-ji-neng-dui-lie-stl-ban-post">https://www.luogu.com.cn/blog/Conqueror886/bfs-qian-zhi-ji-neng-dui-lie-stl-ban-post</a>。</p><p>然后，BFS的实现其实也很简单。</p><p>首先我们开个队列，将初始的元素推入队列，然后标记成已经搜过，然后进行一波搜索，搜完之后将它扔出队列，在这一过程中同时推入下一个元素进队列，直到队列被弹空。</p><h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><p>如果你看不懂的话，请按照代码自个打一遍，在纸上写写画画，然后就会豁然开朗。</p><h3 id="血色先锋队"><a href="#血色先锋队" class="headerlink" title="血色先锋队"></a>血色先锋队</h3><p>（这道题有一丝丝的变态，看不懂可以先往后面看，但是这道题是写得注释最多的，可以先瞅一眼了解下BFS怎么写）。</p><ul><li><p>题目：<a href="https://www.luogu.com.cn/problem/P1332">https://www.luogu.com.cn/problem/P1332</a>。</p></li><li><p>题解： <a href="https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1332-xie-se-xian-feng-dui-post">https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1332-xie-se-xian-feng-dui-post</a>。</p></li></ul><h3 id="好奇怪的电梯"><a href="#好奇怪的电梯" class="headerlink" title="好奇怪的电梯"></a>好奇怪的电梯</h3><ul><li><p>题目：<a href="https://www.luogu.com.cn/problem/P1135">https://www.luogu.com.cn/problem/P1135</a>。</p></li><li><p>题解：<a href="https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1135-ji-guai-di-dian-ti-post">https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1135-ji-guai-di-dian-ti-post</a>。</p></li></ul><h3 id="离开中山路"><a href="#离开中山路" class="headerlink" title="离开中山路"></a>离开中山路</h3><ul><li><p>题目：<a href="https://www.luogu.com.cn/problem/P1746">https://www.luogu.com.cn/problem/P1746</a></p></li><li><p>题解：<a href="https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1746-li-kai-zhong-shan-lu-post">https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1746-li-kai-zhong-shan-lu-post</a>。</p></li></ul><h3 id="马的遍历"><a href="#马的遍历" class="headerlink" title="马的遍历"></a>马的遍历</h3><ul><li><p>题目：<a href="https://www.luogu.com.cn/problem/P1443">https://www.luogu.com.cn/problem/P1443</a>。</p></li><li><p>题解：<a href="https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1443-ma-di-bian-li-post">https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1443-ma-di-bian-li-post</a>。</p></li></ul>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;h2 id=&quot;搜索简介&quot;&gt;&lt;a href=&quot;#搜索简介&quot; class=&quot;headerlink&quot; title=&quot;搜索简介&quot;&gt;&lt;/a&gt;搜索简介&lt;/h2&gt;&lt;p&gt;搜索，就是把所有的决策树全都看一遍，穷尽所有的情况来找到最优解或是所有合法的解数。&lt;/p&gt;
-&lt;p&gt;搜索可以让你的骗分骗得十分</summary>
-      
+    <summary type="html">&lt;h2 id=&quot;搜索简介&quot;&gt;&lt;a href=&quot;#搜索简介&quot; class=&quot;headerlink&quot; title=&quot;搜索简介&quot;&gt;&lt;/a&gt;搜索简介&lt;/h2&gt;&lt;p&gt;搜索，就是把所有的决策树全都看一遍，穷尽所有的情况来找到最优解或是所有合法的解数。&lt;/p&gt;</summary>
     
     
     

@@ -124,7 +124,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">3</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">2</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -134,7 +134,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">3</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">2</span></a>
 
   </li>
   </ul>
@@ -231,67 +231,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://conquest-legends.github.io/2021/06/21/about/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Conquest-Legends">
-      <meta itemprop="description" content="Dxr 的 blog，这里有自己的学习笔记，以及游记等等">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Conquest_Legends's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/21/about/" class="post-title-link" itemprop="url">about</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-06-21 17:02:33 / 修改时间：17:20:53" itemprop="dateCreated datePublished" datetime="2021-06-21T17:02:33+08:00">2021-06-21</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>我是一名 OI 选手，<del>特别 cool 的 OI 选手</del></p>
-<p>搭建这个 blog 还是挺不容易的，希望自己可以在 OI 路上走得越来越远。</p>
-<p>总而言之，先滚去把文化课的作业处理掉吧（）</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://conquest-legends.github.io/2021/06/21/BFS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -317,7 +256,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-06-21 13:52:54 / 修改时间：17:21:57" itemprop="dateCreated datePublished" datetime="2021-06-21T13:52:54+08:00">2021-06-21</time>
+              <time title="创建时间：2021-06-21 13:52:54 / 修改时间：21:28:03" itemprop="dateCreated datePublished" datetime="2021-06-21T13:52:54+08:00">2021-06-21</time>
             </span>
 
           
@@ -332,42 +271,14 @@
 
       
           <h2 id="搜索简介"><a href="#搜索简介" class="headerlink" title="搜索简介"></a>搜索简介</h2><p>搜索，就是把所有的决策树全都看一遍，穷尽所有的情况来找到最优解或是所有合法的解数。</p>
-<p>搜索可以让你的骗分骗得十分爽，并且搜索也是很多高级算法的基础。</p>
-<p>我们先讲讲BFS。</p>
-<h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><p>BFS就是广度优先搜索的简称，它的搜索方式是这样的：</p>
-<p>BFS会将同一层的决策树上的决策全部都看一遍，然后再去看下一层的东西。</p>
-<p>不同于DFS，DFS是不撞南墙不回头。</p>
-<p>举个例子，你在一个陌生的地方，你想快速找到WC，在没有任何外在帮助的条件下你肯定会一层楼一层楼地去看，而不是先从一楼爬到最顶层看第一个房间，然后再爬回去顺便看第二个房间……</p>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>BFS的实现并不是很难，需要用到队列，队列是一种数据结构，对于BFS来讲只需要知道队列怎么写就可以了：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/Conqueror886/bfs-qian-zhi-ji-neng-dui-lie-stl-ban-post">https://www.luogu.com.cn/blog/Conqueror886/bfs-qian-zhi-ji-neng-dui-lie-stl-ban-post</a>。</p>
-<p>然后，BFS的实现其实也很简单。</p>
-<p>首先我们开个队列，将初始的元素推入队列，然后标记成已经搜过，然后进行一波搜索，搜完之后将它扔出队列，在这一过程中同时推入下一个元素进队列，直到队列被弹空。</p>
-<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><p>如果你看不懂的话，请按照代码自个打一遍，在纸上写写画画，然后就会豁然开朗。</p>
-<h3 id="血色先锋队"><a href="#血色先锋队" class="headerlink" title="血色先锋队"></a>血色先锋队</h3><p>（这道题有一丝丝的变态，看不懂可以先往后面看，但是这道题是写得注释最多的，可以先瞅一眼了解下BFS怎么写）。</p>
-<ul>
-<li><p>题目：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1332">https://www.luogu.com.cn/problem/P1332</a>。</p>
-</li>
-<li><p>题解： <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1332-xie-se-xian-feng-dui-post">https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1332-xie-se-xian-feng-dui-post</a>。</p>
-</li>
-</ul>
-<h3 id="好奇怪的电梯"><a href="#好奇怪的电梯" class="headerlink" title="好奇怪的电梯"></a>好奇怪的电梯</h3><ul>
-<li><p>题目：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1135">https://www.luogu.com.cn/problem/P1135</a>。</p>
-</li>
-<li><p>题解：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1135-ji-guai-di-dian-ti-post">https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1135-ji-guai-di-dian-ti-post</a>。</p>
-</li>
-</ul>
-<h3 id="离开中山路"><a href="#离开中山路" class="headerlink" title="离开中山路"></a>离开中山路</h3><ul>
-<li><p>题目：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1746">https://www.luogu.com.cn/problem/P1746</a></p>
-</li>
-<li><p>题解：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1746-li-kai-zhong-shan-lu-post">https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1746-li-kai-zhong-shan-lu-post</a>。</p>
-</li>
-</ul>
-<h3 id="马的遍历"><a href="#马的遍历" class="headerlink" title="马的遍历"></a>马的遍历</h3><ul>
-<li><p>题目：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1443">https://www.luogu.com.cn/problem/P1443</a>。</p>
-</li>
-<li><p>题解：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1443-ma-di-bian-li-post">https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1443-ma-di-bian-li-post</a>。</p>
-</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/06/21/BFS/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -448,12 +359,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
