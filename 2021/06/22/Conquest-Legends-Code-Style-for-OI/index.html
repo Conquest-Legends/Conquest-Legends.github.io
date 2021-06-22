@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"conquest-legends.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="本篇博文介绍下自己目前的代码风格。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Conquest_Legends&#39; Code Style for OI">
+<meta property="og:url" content="http://conquest-legends.github.io/2021/06/22/Conquest-Legends-Code-Style-for-OI/index.html">
+<meta property="og:site_name" content="Conquest_Legends&#39; blog">
+<meta property="og:description" content="本篇博文介绍下自己目前的代码风格。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-06-22T08:49:18.000Z">
+<meta property="article:modified_time" content="2021-06-22T08:50:18.083Z">
+<meta property="article:author" content="Conquest-Legends">
+<meta property="article:tag" content="通用">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://conquest-legends.github.io/2021/06/22/Conquest-Legends-Code-Style-for-OI/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Conquest_Legends' Code Style for OI | Conquest_Legends' blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Conquest_Legends' blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Conquest_Legends' blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">DxrNb！！</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">5</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">2</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">4</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://conquest-legends.github.io/2021/06/22/Conquest-Legends-Code-Style-for-OI/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Conquest-Legends">
+      <meta itemprop="description" content="Dxr 的 blog，这里有自己的学习笔记，以及游记等等">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Conquest_Legends' blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Conquest_Legends' Code Style for OI
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-06-22 16:49:18 / 修改时间：16:50:18" itemprop="dateCreated datePublished" datetime="2021-06-22T16:49:18+08:00">2021-06-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2021/06/22/Conquest-Legends-Code-Style-for-OI/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/06/22/Conquest-Legends-Code-Style-for-OI/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>本篇博文介绍下自己目前的代码风格。</p>
+<span id="more"></span>
+<p>当然不是说自己的风格多好，普及组选手为什么要说自己的代码风格多么多么好……只是提供一种良好的代码风格。</p>
+<p>当然，不要照抄，照抄的话考试时反作弊<code>system</code>会把我拉下水的。</p>
+<h2 id="什么是代码风格"><a href="#什么是代码风格" class="headerlink" title="什么是代码风格"></a>什么是代码风格</h2><p>代码风格，就是你个人在打代码的时候的习惯。</p>
+<p>每个人的风格都不一样，因人而异。</p>
+<p>代码风格对于你程序的查错，书写，可读性起着很大的作用。</p>
+<h2 id="为什么要养成良好的代码风格"><a href="#为什么要养成良好的代码风格" class="headerlink" title="为什么要养成良好的代码风格"></a>为什么要养成良好的代码风格</h2><p>很简单，看着舒服，debug更加容易，<del>打起来也有一种感觉自己是dalao的感觉</del>。</p>
+<p>良好的代码风格也许会让你付出1.5倍打代码的时间，但是会为你节省至少2倍的Debug的时间。</p>
+<p>举个代码写的比较<del>丑</del>的例子：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout&lt;&lt;<span class="string">&quot;dianzan!&quot;</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这代码其实就是每个人刚开始时代码的风格（一本通ppt的），但是说实话，等代码量增加到一定地步的时候所有语句都团成一团，然后你甚至连把输出语句放在哪里都不知道更何谈debug。</p>
+<p>用本人的代码风格写出来的代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;utility&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,m,a,b;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> d[<span class="number">505</span>][<span class="number">505</span>];</span><br><span class="line"><span class="keyword">int</span> dx[<span class="number">4</span>] = &#123;<span class="number">0</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> dy[<span class="number">4</span>] = &#123;<span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> x1[<span class="number">100010</span>][<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line">queue &lt; pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; &gt; q;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">inp</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d%d&quot;</span>,&amp;n, &amp;m, &amp;a, &amp;b);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= a; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> x, y;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;x, &amp;y);</span><br><span class="line">        </span><br><span class="line">        q.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(x, y));</span><br><span class="line">        </span><br><span class="line">        d[x][y] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= b; i++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;x1[i][<span class="number">0</span>], &amp;x1[i][<span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(d, <span class="number">-1</span>, <span class="built_in"><span class="keyword">sizeof</span></span>(d));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(!q.<span class="built_in">empty</span>()) &#123;  </span><br><span class="line">        pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span> &gt; p = q.<span class="built_in">front</span>();</span><br><span class="line">        <span class="keyword">int</span> x = p.first, y = p.second;</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> nx = x+dx[i], ny = y+dy[i];</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(nx &gt;= <span class="number">1</span> <span class="keyword">and</span> nx &lt;= n <span class="keyword">and</span> ny &gt;= <span class="number">1</span> <span class="keyword">and</span> ny &lt;= m <span class="keyword">and</span> d[nx][ny] == <span class="number">-1</span>) &#123;</span><br><span class="line">                d[nx][ny] = d[x][y]+<span class="number">1</span>;</span><br><span class="line">                q.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(nx, ny));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">work</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=b; i++) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, d[x1[i][<span class="number">0</span>]][x1[i][<span class="number">1</span>]]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// freopen(&quot;P1332.in&quot;, &quot;r&quot;, stdin);</span></span><br><span class="line">    <span class="comment">// freopen(&quot;P1332.out&quot;, &quot;w&quot;, stdout);</span></span><br><span class="line">    </span><br><span class="line">    <span class="built_in">init</span>();</span><br><span class="line">    <span class="built_in">inp</span>();</span><br><span class="line">    <span class="built_in">bfs</span>();</span><br><span class="line">    <span class="built_in">work</span>();</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="comment">// fclose(stdin);</span></span><br><span class="line">    <span class="comment">// fclose(stdout);</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><del>很明显，美观了很多</del>。</p>
+<h2 id="本人的代码风格"><a href="#本人的代码风格" class="headerlink" title="本人的代码风格"></a>本人的代码风格</h2><h3 id="概览："><a href="#概览：" class="headerlink" title="概览："></a>概览：</h3><ol>
+<li><p>所有头文件，<strong>必须</strong>使用c前缀，不用<code>.h</code>后缀，用什么头文件就写什么头文件，不能滥写头文件，<em>不应</em>使用万能头文件。</p>
+</li>
+<li><p>应当使用 <code>using namespace std</code>，普及组选手写上就行。</p>
+</li>
+<li><p>输入，初始化，功能全部用<strong>特定的函数</strong>使用，并在主函数中按顺序调用，节省运行空间，比如输入时自己定义一个函数名为 <code>inp</code> 之类的。</p>
+</li>
+<li><p>写代码时，应带上 <code>freopen</code> 并予以注释。</p>
+</li>
+<li><p><code>main</code>函数置于末尾，并在括号里边写一个 <code>void</code>。</p>
+</li>
+<li><p>判断时，不应用<code>int</code>类型代替<code>bool</code>。</p>
+</li>
+<li><p>使用<code>and or 代替 &amp;&amp; ||</code>。</p>
+</li>
+</ol>
+<h3 id="缩进"><a href="#缩进" class="headerlink" title="缩进"></a>缩进</h3><ol>
+<li>每个代码块，予以Tab或4个空格的缩进。</li>
+</ol>
+<h3 id="花括号"><a href="#花括号" class="headerlink" title="花括号"></a>花括号</h3><ol>
+<li><p>无论是什么语句，<code>if,for</code>还是别的什么也罢，必须加上花括号。</p>
+</li>
+<li><p>花括号必须严格按照【花括号不换行】，又名【后花括号】。</p>
+</li>
+</ol>
+<p>这么写:</p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(dxr_is_the_toughest) &#123;</span><br><span class="line">	<span class="attr">dian_zan</span> = <span class="number">1</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	<span class="attr">DxrIsTheToughest</span> = <span class="literal">true</span>;</span><br><span class="line">	<span class="attr">SanLian</span> = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="行"><a href="#行" class="headerlink" title="行"></a>行</h3><ol>
+<li><p>除<code>for</code>循环以外，每行只有一条语句。</p>
+</li>
+<li><p>多个意义独立的代码块之间，用换行隔开，例如输入与输出。</p>
+</li>
+<li><p><code>using namespace std;</code>必须紧跟在头文件之后，并且与头文件必须有一个换行。</p>
+</li>
+<li><p>成员函数，函数，结构体，全局变量块必须用换行隔开。</p>
+</li>
+</ol>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ol>
+<li>变量命名时，采用<strong>驼峰命名法</strong>或<strong>蛇形命名法</strong>。</li>
+</ol>
+<p>比如：</p>
+<p><code>int ThisIsTheStrongestDxr 驼峰命名法</code></p>
+<p><code>int this_is_the_strongest_dxr 蛇形命名法</code></p>
+<p>我个人比较喜欢蛇形，很少写驼峰。</p>
+<ol>
+<li>在定义结构体时，首字母必须大写，其他字母除驼峰的需要外小写，驼峰 $or$ 蛇形。</li>
+</ol>
+<p>如：</p>
+<p><code>struct node 错误样例</code></p>
+<p><code>struct DxrNb 正确样例</code></p>
+<p><code>struct Dxr_tql 又是一个正确样例</code></p>
+<h3 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h3><ol>
+<li><p>像<code>&gt; &lt; = == &gt;= &lt;= !=</code>这些判断用的，两边的变量或常量必须加上空格。</p>
+</li>
+<li><p>逗号<code>,</code>与<code>for</code>中的分号<code>;</code>，后面<strong>必须</strong>有一个空格，前面<strong>不能</strong>有空格。</p>
+</li>
+<li><p>三目运算符两侧，冒号<code>:</code>两侧必须有空格。</p>
+</li>
+<li><p><code>#include</code> 与后面的文件名称<strong>必须</strong>有一个空格。</p>
+</li>
+<li><p>对于注释，必须在同一缩进的基础上与前面的语句有一个空格，并且与后面注释的内容有一个空格。</p>
+</li>
+</ol>
+<p>如：</p>
+<p><code>#include &lt;cstdio&gt;</code></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这篇博文是我修改次数最多的了，自己读了很多遍查了很多错的，总得给小的点个赞吧QvQ。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E9%80%9A%E7%94%A8/" rel="tag"># 通用</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/06/22/%E5%BA%B7%E6%89%98%E5%B1%95%E5%BC%80/" rel="prev" title="康托展开">
+      <i class="fa fa-chevron-left"></i> 康托展开
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC"><span class="nav-number">1.</span> <span class="nav-text">什么是代码风格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%85%BB%E6%88%90%E8%89%AF%E5%A5%BD%E7%9A%84%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC"><span class="nav-number">2.</span> <span class="nav-text">为什么要养成良好的代码风格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E4%BA%BA%E7%9A%84%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC"><span class="nav-number">3.</span> <span class="nav-text">本人的代码风格</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%A7%88%EF%BC%9A"><span class="nav-number">3.1.</span> <span class="nav-text">概览：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%A9%E8%BF%9B"><span class="nav-number">3.2.</span> <span class="nav-text">缩进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8A%B1%E6%8B%AC%E5%8F%B7"><span class="nav-number">3.3.</span> <span class="nav-text">花括号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%8C"><span class="nav-number">3.4.</span> <span class="nav-text">行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-number">3.5.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A9%BA%E6%A0%BC"><span class="nav-number">3.6.</span> <span class="nav-text">空格</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Conquest-Legends</p>
+  <div class="site-description" itemprop="description">Dxr 的 blog，这里有自己的学习笔记，以及游记等等</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Conquest-Legends</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'DsbLQ2w1LwstAGSM7wxF46d7-gzGzoHsz',
+      appKey     : '57i5G7wFG9WAT2ujBoJRWUvk',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
