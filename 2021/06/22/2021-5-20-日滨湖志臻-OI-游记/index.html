@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"conquest-legends.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="搜索简介搜索，就是把所有的决策树全都看一遍，穷尽所有的情况来找到最优解或是所有合法的解数。">
+  <meta name="description" content="Before the Exam跑去上了个厕所，回来的时候想不好名字转述了老杨的一句话：如果我考不了满分就把我千刀万剐（没那么严重）。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BFS">
-<meta property="og:url" content="http://conquest-legends.github.io/2021/06/21/BFS/index.html">
+<meta property="og:title" content="2021&#x2F;5&#x2F;20 日滨湖志臻 OI 游记">
+<meta property="og:url" content="http://conquest-legends.github.io/2021/06/22/2021-5-20-%E6%97%A5%E6%BB%A8%E6%B9%96%E5%BF%97%E8%87%BB-OI-%E6%B8%B8%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Conquest_Legends&#39; blog">
-<meta property="og:description" content="搜索简介搜索，就是把所有的决策树全都看一遍，穷尽所有的情况来找到最优解或是所有合法的解数。">
+<meta property="og:description" content="Before the Exam跑去上了个厕所，回来的时候想不好名字转述了老杨的一句话：如果我考不了满分就把我千刀万剐（没那么严重）。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-06-21T05:52:54.000Z">
-<meta property="article:modified_time" content="2021-06-21T22:08:56.237Z">
+<meta property="article:published_time" content="2021-06-22T08:58:56.000Z">
+<meta property="article:modified_time" content="2021-06-22T09:00:16.133Z">
 <meta property="article:author" content="Conquest-Legends">
-<meta property="article:tag" content="搜索">
+<meta property="article:tag" content="总结">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://conquest-legends.github.io/2021/06/21/BFS/">
+<link rel="canonical" href="http://conquest-legends.github.io/2021/06/22/2021-5-20-%E6%97%A5%E6%BB%A8%E6%B9%96%E5%BF%97%E8%87%BB-OI-%E6%B8%B8%E8%AE%B0/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>BFS | Conquest_Legends' blog</title>
+  <title>2021/5/20 日滨湖志臻 OI 游记 | Conquest_Legends' blog</title>
   
 
 
@@ -168,7 +168,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://conquest-legends.github.io/2021/06/21/BFS/">
+    <link itemprop="mainEntityOfPage" href="http://conquest-legends.github.io/2021/06/22/2021-5-20-%E6%97%A5%E6%BB%A8%E6%B9%96%E5%BF%97%E8%87%BB-OI-%E6%B8%B8%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -181,7 +181,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          BFS
+          2021/5/20 日滨湖志臻 OI 游记
         </h1>
 
         <div class="post-meta">
@@ -190,23 +190,21 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-06-21 13:52:54" itemprop="dateCreated datePublished" datetime="2021-06-21T13:52:54+08:00">2021-06-21</time>
+              <time title="创建时间：2021-06-22 16:58:56 / 修改时间：17:00:16" itemprop="dateCreated datePublished" datetime="2021-06-22T16:58:56+08:00">2021-06-22</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-22 06:08:56" itemprop="dateModified" datetime="2021-06-22T06:08:56+08:00">2021-06-22</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%99%AE%E5%8F%8A%E7%BB%84/" itemprop="url" rel="index"><span itemprop="name">普及组</span></a>
+                  <a href="/categories/%E6%B8%B8%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">游记</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%B8%B8%E8%AE%B0/%E7%BB%8F%E9%AA%8C/" itemprop="url" rel="index"><span itemprop="name">经验</span></a>
                 </span>
             </span>
 
@@ -219,8 +217,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2021/06/21/BFS/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/06/21/BFS/" itemprop="commentCount"></span>
+    <a title="valine" href="/2021/06/22/2021-5-20-%E6%97%A5%E6%BB%A8%E6%B9%96%E5%BF%97%E8%87%BB-OI-%E6%B8%B8%E8%AE%B0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/06/22/2021-5-20-%E6%97%A5%E6%BB%A8%E6%B9%96%E5%BF%97%E8%87%BB-OI-%E6%B8%B8%E8%AE%B0/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -235,43 +233,55 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="搜索简介"><a href="#搜索简介" class="headerlink" title="搜索简介"></a>搜索简介</h2><p>搜索，就是把所有的决策树全都看一遍，穷尽所有的情况来找到最优解或是所有合法的解数。</p>
+        <h2 id="Before-the-Exam"><a href="#Before-the-Exam" class="headerlink" title="Before the Exam"></a>Before the Exam</h2><p>跑去上了个厕所，回来的时候想不好名字转述了老杨的一句话：如果我考不了满分就<del>把我千刀万剐</del>（没那么严重）。</p>
 <span id="more"></span>
-<p>搜索可以让你的骗分骗得十分爽，并且搜索也是很多高级算法的基础。</p>
-<p>我们先讲讲BFS。</p>
-<h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><p>BFS就是广度优先搜索的简称，它的搜索方式是这样的：</p>
-<p>BFS会将同一层的决策树上的决策全部都看一遍，然后再去看下一层的东西。</p>
-<p>不同于DFS，DFS是不撞南墙不回头。</p>
-<p>举个例子，你在一个陌生的地方，你想快速找到WC，在没有任何外在帮助的条件下你肯定会一层楼一层楼地去看，而不是先从一楼爬到最顶层看第一个房间，然后再爬回去顺便看第二个房间……</p>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>BFS的实现并不是很难，需要用到队列，队列是一种数据结构，对于BFS来讲只需要知道队列怎么写就可以了：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/Conqueror886/bfs-qian-zhi-ji-neng-dui-lie-stl-ban-post">https://www.luogu.com.cn/blog/Conqueror886/bfs-qian-zhi-ji-neng-dui-lie-stl-ban-post</a>。</p>
-<p>然后，BFS的实现其实也很简单。</p>
-<p>首先我们开个队列，将初始的元素推入队列，然后标记成已经搜过，然后进行一波搜索，搜完之后将它扔出队列，在这一过程中同时推入下一个元素进队列，直到队列被弹空。</p>
-<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><p>如果你看不懂的话，请按照代码自个打一遍，在纸上写写画画，然后就会豁然开朗。</p>
-<h3 id="血色先锋队"><a href="#血色先锋队" class="headerlink" title="血色先锋队"></a>血色先锋队</h3><p>（这道题有一丝丝的变态，看不懂可以先往后面看，但是这道题是写得注释最多的，可以先瞅一眼了解下BFS怎么写）。</p>
+<h2 id="Day1"><a href="#Day1" class="headerlink" title="Day1"></a>Day1</h2><p>大致看了一遍题目，发现了 T3 是一道原题，当时就觉得这题估计得被全场 AC。（T4自己也做过而且上次做的时候炸了）。</p>
+<p>T1 就是一道枚举个位数的题，当枚举到10的时候要把这东西初始化成0，然后每次控制好循环的次数，最后注意不要用 <code>puts</code> 输出换行。</p>
+<p>瞅了一眼数据发现不过100而已，连数组都免了直接输出，也不用考虑 <code>long long</code> 的问题，反正都是10以内的数。所以空间复杂度完美 $O(1)$。</p>
+<p>至于时间复杂度嘛，是 $O(n^2)$，不过 $n$ 才100而已，不用考虑 TLE。</p>
+<p>T2 第一感觉是暴力枚举，然后瞅了一眼数据范围（刚开始没啥反应）就开始干了。</p>
+<p>干完之后由于切 T3 心切，直接跑去秒掉了 T3，打算最后回来看看 T2 的数据类型和时空复杂度的问题。</p>
+<p>然而切完之后复仇的想法过于强烈于是又跑去秒了 T4。</p>
+<p>T4 上来贯彻能用局部变量就用局部变量的原则（因为局部变量跑得比全局变量快嘛），上去开了俩 $10^6$ 的数组，运行时直接 RE 掉了。</p>
+<p>然后分析了一下应该是爆栈了（）</p>
+<p>所以痛苦地把这两个数组移到全局。然后这题就没有任何绊倒我的地方了。</p>
+<p>每道题都自己造了点数据，没有卡掉自己的，接下来就是算时空复杂度和数据类型了。</p>
+<p>倒着去算每道题的数据类型和时空复杂度，T4 虽然上来一句 <strong>不超过长整型</strong> 很吓人，但是看看数据完全爆不了 <code>int</code>，于是放心的使用了 <code>int</code>。</p>
+<p>时空复杂度都是 $O(n)$ 不害怕 TLE 和 MLE。</p>
+<p>T3 虽说是原题但好歹是考试，于是我跑去算了算桶该枚举到多大，然后发现极限情况下应该是132左右的样子，保险起见直接开到200，毕竟 $10^7$ 这玩意不可能除上个200个2还会有大于1的，所以果断枚举到200，反正增加的这点常数也会被我的卡常抵消得干干净净。</p>
+<p>然后这玩意执行次数最多的居然是输入（）</p>
+<p>然后时间复杂度就是 $O(n)$，不用担心 TLE，空间复杂度是 $O(n)$ 也不担心 MLE。</p>
+<p>最后就是这最最最最最最……NB 的 T2 了。</p>
+<p>算完暴力枚举的空间复杂度是 $O(n)$ 正常。</p>
+<p>时间复杂度是 $O(nm)$，一开始感觉也正常。</p>
+<p>接下来我看了一眼数据发现：$n,m &lt;= 20000$。</p>
+<p>当时就把我吓得半死不活。</p>
+<p>这是 TLE 的节奏啊！而且万一爆了统计答案变量类型的 <code>int</code>，感觉溢出之后会很难受的。</p>
+<p>于是极限法跑去把统计答案的类型从 <code>int</code> 改成了 <code>long long</code>。</p>
+<p>接下来就是疯狂地跑去卡常（当时考场上想到了使用 <code>sort</code> 的优化，但是一想有很多新学的人不会这玩意，抱着公平竞争的心态去打模拟赛就放弃了）。</p>
+<p>接下来我就写了一个<strong>只开 cstdio 一个库</strong>加 <strong>register 的卡常</strong>加上<strong>所有变量全部局部变量配上初始化数组</strong>最后<strong>不忘将 if 改成 三目</strong>的超级卡常阵容！</p>
+<p>当我写完这一堆的时候基本上全机房的人全都交卷完毕并且从教练那里拿回了书。</p>
+<p>但是我被吓得够呛，逼迫自己造了几个数据并检查了 $n$ 遍 <code>freopen</code> 和文件名。</p>
+<p>最后提交，拿回书来写了一个后缀表达式放松了下心情。</p>
+<h2 id="After-the-Exam"><a href="#After-the-Exam" class="headerlink" title="After the Exam"></a>After the Exam</h2><p>我找到初二十八班郭鑫源，问：</p>
 <ul>
-<li><p>题目：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1332">https://www.luogu.com.cn/problem/P1332</a>。</p>
-</li>
-<li><p>题解： <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1332-xie-se-xian-feng-dui-post">https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1332-xie-se-xian-feng-dui-post</a>。</p>
-</li>
+<li>你 T2 用的是两重循环的枚举吧。</li>
 </ul>
-<h3 id="好奇怪的电梯"><a href="#好奇怪的电梯" class="headerlink" title="好奇怪的电梯"></a>好奇怪的电梯</h3><ul>
-<li><p>题目：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1135">https://www.luogu.com.cn/problem/P1135</a>。</p>
-</li>
-<li><p>题解：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1135-ji-guai-di-dian-ti-post">https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1135-ji-guai-di-dian-ti-post</a>。</p>
-</li>
+<p>他回复得十分 naively：</p>
+<ul>
+<li>对。</li>
 </ul>
-<h3 id="离开中山路"><a href="#离开中山路" class="headerlink" title="离开中山路"></a>离开中山路</h3><ul>
-<li><p>题目：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1746">https://www.luogu.com.cn/problem/P1746</a></p>
-</li>
-<li><p>题解：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1746-li-kai-zhong-shan-lu-post">https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1746-li-kai-zhong-shan-lu-post</a>。</p>
-</li>
-</ul>
-<h3 id="马的遍历"><a href="#马的遍历" class="headerlink" title="马的遍历"></a>马的遍历</h3><ul>
-<li><p>题目：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1443">https://www.luogu.com.cn/problem/P1443</a>。</p>
-</li>
-<li><p>题解：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1443-ma-di-bian-li-post">https://www.luogu.com.cn/blog/Conqueror886/ti-xie-p1443-ma-di-bian-li-post</a>。</p>
-</li>
-</ul>
+<p>然后我告诉他这题数据范围的时候他人都石化了。</p>
+<p>这时候杜迎奥说：#……&amp;* ……&amp;$^%#^%$^$^$^%$^%#%^！！￥@</p>
+<p>（这题我用的是桶排不用担心 TLE ……）</p>
+<p>然后我认真地回忆了一下题目发现题目中没有给出那道题的鱼的体重是有多大。</p>
+<p>为了让他再 naive 一会我就没有告诉他这件事。</p>
+<p>然后第二天成绩出来了，本来以为会被数据范围以及学校年老体衰的测评机暗算的我居然拿了400分！</p>
+<p>卡常的力量名不虚传。</p>
+<p>接下来喂给洛谷测评了一下，发现第二个点跑出了996 ms 的<del>好</del>成绩。</p>
+<p>T3 很多人莫名其妙的爆炸了，然后就有一大堆与西瓜不共戴天的话语（）</p>
+<p>然后一个人跑到学校团队里讨论我的代码，结果炸出了青栀屿幽梦。</p>
+<p>但不得不说，会算时空复杂度，数据类型的使用以及卡常的方法真的很棒！</p>
 
     </div>
 
@@ -281,7 +291,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E6%90%9C%E7%B4%A2/" rel="tag"># 搜索</a>
+              <a href="/tags/%E6%80%BB%E7%BB%93/" rel="tag"># 总结</a>
           </div>
 
         
@@ -289,11 +299,11 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2021/06/21/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="next" title="二叉树">
-      二叉树 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/06/22/2021-6-12-%E6%97%A5%E6%BB%A8%E6%B9%96%E5%BF%97%E8%87%BB-OI-%E6%B8%B8%E8%AE%B0-%E8%80%83%E5%90%8E%E6%80%BB%E7%BB%93-%E9%A2%98%E8%A7%A3/" rel="prev" title="2021/6/12 日滨湖志臻 OI 游记&考后总结&题解">
+      <i class="fa fa-chevron-left"></i> 2021/6/12 日滨湖志臻 OI 游记&考后总结&题解
     </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -353,7 +363,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">搜索简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BFS"><span class="nav-number">2.</span> <span class="nav-text">BFS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0"><span class="nav-number">3.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">例题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%80%E8%89%B2%E5%85%88%E9%94%8B%E9%98%9F"><span class="nav-number">4.1.</span> <span class="nav-text">血色先锋队</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A5%BD%E5%A5%87%E6%80%AA%E7%9A%84%E7%94%B5%E6%A2%AF"><span class="nav-number">4.2.</span> <span class="nav-text">好奇怪的电梯</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A6%BB%E5%BC%80%E4%B8%AD%E5%B1%B1%E8%B7%AF"><span class="nav-number">4.3.</span> <span class="nav-text">离开中山路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A9%AC%E7%9A%84%E9%81%8D%E5%8E%86"><span class="nav-number">4.4.</span> <span class="nav-text">马的遍历</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Before-the-Exam"><span class="nav-number">1.</span> <span class="nav-text">Before the Exam</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day1"><span class="nav-number">2.</span> <span class="nav-text">Day1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#After-the-Exam"><span class="nav-number">3.</span> <span class="nav-text">After the Exam</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
