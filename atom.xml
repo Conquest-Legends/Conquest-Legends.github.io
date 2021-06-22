@@ -6,7 +6,7 @@
   <link href="http://conquest-legends.github.io/atom.xml" rel="self"/>
   
   <link href="http://conquest-legends.github.io/"/>
-  <updated>2021-06-21T22:09:01.041Z</updated>
+  <updated>2021-06-22T02:30:32.051Z</updated>
   <id>http://conquest-legends.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>康托展开</title>
+    <link href="http://conquest-legends.github.io/2021/06/22/%E5%BA%B7%E6%89%98%E5%B1%95%E5%BC%80/"/>
+    <id>http://conquest-legends.github.io/2021/06/22/%E5%BA%B7%E6%89%98%E5%B1%95%E5%BC%80/</id>
+    <published>2021-06-22T02:24:59.000Z</published>
+    <updated>2021-06-22T02:30:32.051Z</updated>
+    
+    
+    
+    
+    <category term="通用" scheme="http://conquest-legends.github.io/categories/%E9%80%9A%E7%94%A8/"/>
+    
+    
+    <category term="搜索" scheme="http://conquest-legends.github.io/tags/%E6%90%9C%E7%B4%A2/"/>
+    
+    <category term="通用学术" scheme="http://conquest-legends.github.io/tags/%E9%80%9A%E7%94%A8%E5%AD%A6%E6%9C%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>二叉树</title>
